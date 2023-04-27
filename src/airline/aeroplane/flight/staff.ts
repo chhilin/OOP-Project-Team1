@@ -1,3 +1,5 @@
+import { Person } from "../../Person";
+
 export enum staffCategory{
     PILOTE,
     CO_PILOTE,
@@ -5,9 +7,10 @@ export enum staffCategory{
     CHEF
 }
 
-export class Staff{
+export class Staff extends Person{
     private salary: number;
-    constructor(salary: number){
-        this.salary = salary
+    constructor(salary: number,firstName:string, lastNmame: string){
+        super(firstName,lastNmame);
+        this.salary = salary;
     }
 }
