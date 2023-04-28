@@ -15,19 +15,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Passenger = void 0;
-var Person_1 = require("../../Person");
-var Passenger = /** @class */ (function (_super) {
-    __extends(Passenger, _super);
-    function Passenger(firstName, lastName, meal) {
-        var _this = _super.call(this, firstName, lastName) || this;
-        _this.booking = [];
-        _this.meals = meal;
-        return _this;
+exports.Chef = void 0;
+var staff_1 = require("./staff");
+var Chef = /** @class */ (function (_super) {
+    __extends(Chef, _super);
+    function Chef(firstName, lastName) {
+        return _super.call(this, staff_1.staffCategory.CHEF, firstName, lastName) || this;
     }
-    Passenger.prototype.addBooking = function (booking) {
-        this.booking.push(booking);
-    };
-    return Passenger;
-}(Person_1.Person));
-exports.Passenger = Passenger;
+    return Chef;
+}(staff_1.Staff));
+exports.Chef = Chef;

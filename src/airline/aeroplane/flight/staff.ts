@@ -8,8 +8,10 @@ export enum staffCategory{
 }
 
 export class Staff extends Person{
-    private salary: number;
-    constructor(salary: number,firstName:string, lastNmame: string){
+    protected salary: number = 0;
+    constructor(
+        // protected category:staffCategory,
+        salary: number,firstName:string, lastNmame: string){
         super(firstName,lastNmame);
         this.salary = salary;
     }

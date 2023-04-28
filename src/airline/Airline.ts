@@ -1,5 +1,5 @@
 import { PassThrough } from "stream";
-import { Ticket } from "./ticket/Ticket";
+import { Ticket } from "./booking/Booking";
 import { Passenger } from "./aeroplane/seat/Passenger";
 export class Airline{
     private name: string;

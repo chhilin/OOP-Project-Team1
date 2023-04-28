@@ -26,8 +26,11 @@ var staffCategory;
 })(staffCategory = exports.staffCategory || (exports.staffCategory = {}));
 var Staff = /** @class */ (function (_super) {
     __extends(Staff, _super);
-    function Staff(salary, firstName, lastNmame) {
+    function Staff(
+    // protected category:staffCategory,
+    salary, firstName, lastNmame) {
         var _this = _super.call(this, firstName, lastNmame) || this;
+        _this.salary = 0;
         _this.salary = salary;
         return _this;
     }

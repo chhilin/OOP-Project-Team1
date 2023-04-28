@@ -4,6 +4,7 @@ exports.Flight = void 0;
 var Flight = /** @class */ (function () {
     function Flight(departureTime, arrivalTime) {
         this.passengers = [];
+        this.staff = [];
         this.departureTime = departureTime;
         ;
         this.arrivalTime = arrivalTime;
