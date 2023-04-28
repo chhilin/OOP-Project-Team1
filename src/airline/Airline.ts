@@ -1,4 +1,6 @@
+import { PassThrough } from "stream";
 import { Ticket } from "./ticket/Ticket";
+import { Passenger } from "./aeroplane/seat/Passenger";
 export class Airline{
     private name: string;
     public tickets: Ticket[] = []
@@ -8,5 +10,10 @@ export class Airline{
 
     addTicket(ticket: Ticket){
         return this.tickets.push(ticket)
+    }
+    findPassenger():Ticket{
+       for(let ticke of this.tickets){
+        return ticke;
+       }
     }
 }

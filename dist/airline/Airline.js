@@ -9,6 +9,12 @@ var Airline = /** @class */ (function () {
     Airline.prototype.addTicket = function (ticket) {
         return this.tickets.push(ticket);
     };
+    Airline.prototype.findPassenger = function () {
+        for (var _i = 0, _a = this.tickets; _i < _a.length; _i++) {
+            var ticke = _a[_i];
+            return ticke;
+        }
+    };
     return Airline;
 }());
 exports.Airline = Airline;
