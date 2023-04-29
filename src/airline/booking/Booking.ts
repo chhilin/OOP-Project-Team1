@@ -1,17 +1,20 @@
 import { Seat } from "../aeroplane/seat/Seat";
 import { Trip } from "./Trip";
 
-export class Ticket{
-    private ticketID: number;
+export class Booking{
+    private bookingID: number;
     private price: number;
+    private retutnBooking: Boolean;
     public trips: Trip[]=[]
     public seats: Seat;
-    private numberOfTicket: number;
-    constructor(ticketID: number,price: number,numberOfTicket: number,seat:Seat){
-        this.ticketID = ticketID;
+    private numberOfTicketBooking: number;
+    
+    constructor(bookingID: number,price: number,numberOfTicketBooking: number,seat:Seat, retutnBooking: Boolean){
+        this.bookingID = bookingID;
         this.price = price;
-        this.numberOfTicket = numberOfTicket;
+        this.numberOfTicketBooking = numberOfTicketBooking;
         this.seats = seat;
+        this.retutnBooking = retutnBooking;
     }
     addTrip(trip:Trip){
         this.trips.push(trip);
@@ -22,5 +25,7 @@ export class Ticket{
         }
         return undefined
     }
- 
+    getReturnBookingTicket(){
+        return this.retutnBooking 
+    }
 }

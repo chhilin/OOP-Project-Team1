@@ -15,29 +15,28 @@ var passenger2 = new Passenger_1.Passenger('Soki', 'Chhouy');
 var seat1 = new Seat_1.Seat('A01');
 var seat2 = new Seat_1.Seat('A02');
 var seat3 = new Seat_1.Seat('A03');
-var booking1 = new Booking_1.Ticket(1, 120, 2, seat1);
-var booking2 = new Booking_1.Ticket(1, 120, 2, seat2);
-var booking3 = new Booking_1.Ticket(1, 120, 2, seat3);
+var booking1 = new Booking_1.Booking(1, 120, 2, seat1, true);
+var booking2 = new Booking_1.Booking(2, 120, 2, seat2, false);
+var booking3 = new Booking_1.Booking(3, 120, 1, seat3, true);
 passenger1.addBooking(booking1);
 passenger1.addBooking(booking2);
 passenger2.addBooking(booking3);
 var trip1 = new Trip_1.Trip('PP', 'UK');
 booking1.addTrip(trip1);
-booking2.addTrip(trip1);
-var flight1 = new Flight_1.Flight('12-Apr-2023', '23-Apr-2023');
+// booking2.addTrip(trip1);
+var date = new Date();
+var flight1 = new Flight_1.Flight(date);
 flight1.addPassenger(passenger1);
 flight1.addPassenger(passenger2);
 var airline = new Airline_1.Airline('Cambodia-CK');
-airline.addTicket(booking1);
-airline.addTicket(booking2);
+airline.addBooking(booking1);
+airline.addBooking(booking2);
+airline.addBooking(booking3);
 var airport = new Airport_1.Airport('Cambodia');
 airport.addAirline(airline);
-console.log(flight1);
+// console.log(flight1)
 // As an airline manager, I want to know for a given flight, how many passengers have return 
 //tickets.
-//
-// let date1 = new Date(12-3-2023);
-// let date2 = new Date(1-4-2023);
-// let pi = new Pilot('rady','y');
-// pi.setNumberOfFlight(2)
-// console.log(pi)
+// console.log(passenger1);
+// airline.getPassengerReturnTicket(booking1)
+console.log(airline.getPassengerReturnBookingTicket() + " customers returnBookingTicket");

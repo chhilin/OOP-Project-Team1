@@ -1,13 +1,15 @@
+import { Flight } from "./Flight";
 import { Staff, staffCategory } from "./staff";
 
 export class Pilot extends Staff{
     private numberOfFlight: number;
-    constructor( firstName: string, lastName: string){
-        super(staffCategory.PILOTE,firstName, lastName);
-        
+    private flights: Flight[]=[];
+    constructor(firstName:string, lastName:string){
+        super(staffCategory.PILOT, firstName,lastName);
     }
-    setNumberOfFlight(numberOfFlight:number){
-        return this.numberOfFlight = numberOfFlight;
-        let date = new Date()
+
+    addFlight(flight:Flight){
+        this.flights.push(flight);
     }
+
 }

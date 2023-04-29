@@ -1,24 +1,28 @@
 "use strict";
 exports.__esModule = true;
-exports.Ticket = void 0;
-var Ticket = /** @class */ (function () {
-    function Ticket(ticketID, price, numberOfTicket, seat) {
+exports.Booking = void 0;
+var Booking = /** @class */ (function () {
+    function Booking(bookingID, price, numberOfTicketBooking, seat, retutnBooking) {
         this.trips = [];
-        this.ticketID = ticketID;
+        this.bookingID = bookingID;
         this.price = price;
-        this.numberOfTicket = numberOfTicket;
+        this.numberOfTicketBooking = numberOfTicketBooking;
         this.seats = seat;
+        this.retutnBooking = retutnBooking;
     }
-    Ticket.prototype.addTrip = function (trip) {
+    Booking.prototype.addTrip = function (trip) {
         this.trips.push(trip);
     };
-    Ticket.prototype.getTrip = function () {
+    Booking.prototype.getTrip = function () {
         for (var _i = 0, _a = this.trips; _i < _a.length; _i++) {
             var trip = _a[_i];
             return trip;
         }
         return undefined;
     };
-    return Ticket;
+    Booking.prototype.getReturnBookingTicket = function () {
+        return this.retutnBooking;
+    };
+    return Booking;
 }());
-exports.Ticket = Ticket;
+exports.Booking = Booking;

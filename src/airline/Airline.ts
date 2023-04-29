@@ -1,19 +1,34 @@
 import { PassThrough } from "stream";
-import { Ticket } from "./booking/Booking";
-import { Passenger } from "./aeroplane/seat/Passenger";
+import { Booking } from "./booking/Booking";
+import { Staff } from "./aeroplane/flight/staff";
 export class Airline{
     private name: string;
-    public tickets: Ticket[] = []
+    private bookings: Booking[] = [];
+    private staff : Staff[]=[];
     constructor(name: string){
         this.name = name;
     }
 
-    addTicket(ticket: Ticket){
-        return this.tickets.push(ticket)
+    addBooking(booking: Booking){
+        return this.bookings.push(booking)
     }
-    findPassenger():Ticket{
-       for(let ticke of this.tickets){
+    findPassenger():Booking{
+       for(let ticke of this.bookings){
         return ticke;
        }
+    }
+
+    addStaff(staff:Staff){
+        this.staff.push(staff);
+    }
+
+    getPassengerReturnBookingTicket(){
+        let countReturnBookingTicket = 0;
+        for(let booking of this.bookings){
+            if(booking.getReturnBookingTicket() == true){
+                countReturnBookingTicket +=1
+            }
+        }
+        return countReturnBookingTicket;
     }
 }

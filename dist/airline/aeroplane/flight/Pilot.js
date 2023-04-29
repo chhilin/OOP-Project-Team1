@@ -20,11 +20,12 @@ var staff_1 = require("./staff");
 var Pilot = /** @class */ (function (_super) {
     __extends(Pilot, _super);
     function Pilot(firstName, lastName) {
-        return _super.call(this, staff_1.staffCategory.PILOTE, firstName, lastName) || this;
+        var _this = _super.call(this, staff_1.staffCategory.PILOTE, firstName, lastName) || this;
+        _this.flights = [];
+        return _this;
     }
-    Pilot.prototype.setNumberOfFlight = function (numberOfFlight) {
-        return this.numberOfFlight = numberOfFlight;
-        var date = new Date();
+    Pilot.prototype.addFlight = function (flight) {
+        this.flights.push(flight);
     };
     return Pilot;
 }(staff_1.Staff));

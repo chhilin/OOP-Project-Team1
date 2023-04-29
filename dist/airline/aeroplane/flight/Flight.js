@@ -2,13 +2,10 @@
 exports.__esModule = true;
 exports.Flight = void 0;
 var Flight = /** @class */ (function () {
-    function Flight(departureTime, arrivalTime) {
+    function Flight(date) {
         this.passengers = [];
         this.staff = [];
-        this.departureTime = departureTime;
-        ;
-        this.arrivalTime = arrivalTime;
-        // this.passengers = passengers
+        this.date = date;
     }
     Flight.prototype.addPassenger = function (passenger) {
         return this.passengers.push(passenger);
