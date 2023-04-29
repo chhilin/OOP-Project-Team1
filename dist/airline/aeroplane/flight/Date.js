@@ -1,9 +1,14 @@
 "use strict";
 exports.__esModule = true;
-exports.Date = void 0;
-var Date = /** @class */ (function () {
-    function Date() {
+exports.DateTime = void 0;
+var DateTime = /** @class */ (function () {
+    function DateTime(dateTime) {
+        this.flights = [];
+        this.dateTime = dateTime;
     }
-    return Date;
+    DateTime.prototype.addFlight = function (flight) {
+        this.flights.push(flight);
+    };
+    return DateTime;
 }());
-exports.Date = Date;
+exports.DateTime = DateTime;

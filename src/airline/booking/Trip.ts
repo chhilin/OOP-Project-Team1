@@ -1,4 +1,5 @@
 import { Flight } from "../aeroplane/flight/Flight";
+import { MealCategory } from "../aeroplane/seat/Meal";
 
 export class Trip{
     public departureAddress: string;
@@ -17,4 +18,5 @@ export class Trip{
         }
         return undefined;
     }
+
 }

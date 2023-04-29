@@ -1,7 +1,7 @@
 export enum MealCategory{
-    VEGETARIAN,
-    VEGAN,
-    DAILY_FREE,
-    HALAL,
-    KOSHER
+    VEGETARIAN = 'VEGETARIAN',
+    VEGAN = 'VEGAN',
+    DAILY_FREE = 'DAILY_FREE',
+    HALAL = 'HALAL',
+    KOSHER = 'KOSHER',
 }

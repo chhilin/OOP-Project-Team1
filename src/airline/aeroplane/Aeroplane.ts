@@ -1,5 +1,6 @@
 import { Seat } from "./seat/Seat";
 import { Flight } from "./flight/Flight";
+import { DateTime } from "./flight/Date";
 export class Aeroplane{
     private planeID: string;
     public seats: Seat[] = [];
@@ -15,4 +16,5 @@ export class Aeroplane{
     addFlight(flight: Flight){
         return this.flights.push(flight)
     }
+
 }

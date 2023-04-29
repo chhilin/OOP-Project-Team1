@@ -19,8 +19,8 @@ exports.Pilot = void 0;
 var staff_1 = require("./staff");
 var Pilot = /** @class */ (function (_super) {
     __extends(Pilot, _super);
-    function Pilot(firstName, lastName) {
-        var _this = _super.call(this, staff_1.staffCategory.PILOTE, firstName, lastName) || this;
+    function Pilot(category, firstName, lastName) {
+        var _this = _super.call(this, category, firstName, lastName) || this;
         _this.flights = [];
         return _this;
     }

@@ -28,6 +28,9 @@ var Passenger = /** @class */ (function (_super) {
     Passenger.prototype.addBooking = function (booking) {
         this.booking.push(booking);
     };
+    Passenger.prototype.getCategoryMeal = function () {
+        return this.meals;
+    };
     return Passenger;
 }(Person_1.Person));
 exports.Passenger = Passenger;

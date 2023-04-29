@@ -2,10 +2,10 @@
 exports.__esModule = true;
 exports.Flight = void 0;
 var Flight = /** @class */ (function () {
-    function Flight(date) {
+    function Flight(flihgtID) {
         this.passengers = [];
         this.staff = [];
-        this.date = date;
+        this.flihgtID = flihgtID;
     }
     Flight.prototype.addPassenger = function (passenger) {
         return this.passengers.push(passenger);
@@ -16,6 +16,14 @@ var Flight = /** @class */ (function () {
             return passenger;
         }
         return undefined;
+    };
+    Flight.prototype.getCategoryMealOfPassenger = function () {
+        var categoryMeal = '';
+        for (var _i = 0, _a = this.passengers; _i < _a.length; _i++) {
+            var meal = _a[_i];
+            categoryMeal += meal.getCategoryMeal() + '\n';
+        }
+        return categoryMeal;
     };
     return Flight;
 }());

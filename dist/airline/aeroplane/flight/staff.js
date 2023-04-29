@@ -19,19 +19,27 @@ exports.Staff = exports.staffCategory = void 0;
 var Person_1 = require("../../Person");
 var staffCategory;
 (function (staffCategory) {
-    staffCategory[staffCategory["PILOTE"] = 0] = "PILOTE";
+    staffCategory[staffCategory["PILOT"] = 0] = "PILOT";
     staffCategory[staffCategory["CO_PILOTE"] = 1] = "CO_PILOTE";
     staffCategory[staffCategory["FLIGHT_ATTENDAN"] = 2] = "FLIGHT_ATTENDAN";
     staffCategory[staffCategory["CHEF"] = 3] = "CHEF";
 })(staffCategory = exports.staffCategory || (exports.staffCategory = {}));
 var Staff = /** @class */ (function (_super) {
     __extends(Staff, _super);
-    function Staff(salary, firstName, lastNmame) {
+    function Staff(category, firstName, lastNmame) {
         var _this = _super.call(this, firstName, lastNmame) || this;
         _this.salary = 0;
-        _this.salary = salary;
         return _this;
     }
+    Staff.prototype.setSalary = function (salary) {
+        this.salary = salary;
+    };
+    Staff.prototype.getSalary = function () {
+        return this.salary;
+    };
+    Staff.prototype.getCategory = function () {
+        return this.category;
+    };
     return Staff;
 }(Person_1.Person));
 exports.Staff = Staff;

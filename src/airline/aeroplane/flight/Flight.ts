@@ -1,11 +1,13 @@
+import { MealCategory } from "../seat/Meal";
 import { Passenger } from "../seat/Passenger";
+import { DateTime } from "./Date";
 import { Staff } from "./staff";
 export class Flight {
-    private date: Date;
     public passengers: Passenger[] = [];
-    public staff: Staff[] = []
-    constructor(date: Date) {
-        this.date = date
+    public staff: Staff[] = [];
+    private flihgtID: string
+    constructor(flihgtID: string) {
+        this.flihgtID = flihgtID
     }
     addPassenger(passenger: Passenger) {
         return this.passengers.push(passenger);
@@ -15,6 +17,14 @@ export class Flight {
             return passenger
         }
         return undefined;
+    }
+
+    getCategoryMealOfPassenger():string{
+        let categoryMeal : string = '';
+        for(let meal of this.passengers){
+            categoryMeal += meal.getCategoryMeal() + '\n'
+        }
+        return categoryMeal
     }
 
 }
