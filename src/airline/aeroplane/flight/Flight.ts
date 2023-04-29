@@ -5,13 +5,16 @@ import { Staff } from "./staff";
 export class Flight {
     public passengers: Passenger[] = [];
     public staff: Staff[] = [];
-    private flihgtID: string
+    private flihgtID: string;
+
     constructor(flihgtID: string) {
         this.flihgtID = flihgtID
     }
+
     addPassenger(passenger: Passenger) {
         return this.passengers.push(passenger);
     }
+    
     getPassenger(): Passenger | undefined {
         for (let passenger of this.passengers) {
             return passenger

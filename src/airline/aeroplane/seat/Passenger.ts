@@ -10,9 +10,11 @@ export class Passenger extends Person {
         super(firstName, lastName);
         this.meals = meal;
     }
+
     addBooking(booking: Booking) {
         this.booking.push(booking)
     }
+    
     getCategoryMeal():MealCategory{
         return this.meals;
     }

@@ -1,4 +1,4 @@
-import { PassThrough } from "stream";
+
 import { Booking } from "./booking/Booking";
 import { Staff } from "./aeroplane/flight/staff";
 import { DateTime } from "./aeroplane/flight/Date";
@@ -6,6 +6,7 @@ export class Airline{
     private name: string;
     private bookings: Booking[] = [];
     private staff : Staff[]=[];
+    
     constructor(name: string){
         this.name = name;
     }
@@ -22,9 +23,7 @@ export class Airline{
     addStaff(staff:Staff){
         this.staff.push(staff);
     }
-    // addDateTime(dateTime:DateTime){
-    //     this.dateTime.push(dateTime)
-    // }
+
     getPassengerReturnBookingTicket(){
         let countReturnBookingTicket = 0;
         for(let booking of this.bookings){

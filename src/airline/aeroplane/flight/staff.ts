@@ -9,10 +9,12 @@ export enum staffCategory {
 export class Staff extends Person {
     private salary: number = 0;
     private category: staffCategory[]=[];
+
     constructor(category:staffCategory,firstName: string, lastNmame: string) {
         super(firstName, lastNmame);
         
     }
+    
     setSalary(salary:number){
         this.salary = salary;
     }
